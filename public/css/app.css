@@ -8411,3 +8411,13 @@ body {
   cursor: pointer;
 }
 
+/**
+ User profile image
+ */
+.user-show-page {
+  .user-info {
+    .thumbnail {
+      margin-bottom: 0px;
+    }
+  }
+}
