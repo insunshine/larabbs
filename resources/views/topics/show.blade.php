@@ -47,9 +47,9 @@
 </p> <label>Order</label>
 <p>
 	{{ $topic->order }}
-</p> <label>Except</label>
+</p> <label>Excerpt</label>
 <p>
-	{{ $topic->except }}
+	{{ $topic->excerpt }}
 </p> <label>Slug</label>
 <p>
 	{{ $topic->slug }}

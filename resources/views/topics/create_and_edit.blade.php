@@ -63,8 +63,8 @@
                     <input class="form-control" type="text" name="order" id="order-field" value="{{ old('order', $topic->order ) }}" />
                 </div> 
                 <div class="form-group">
-                	<label for="except-field">Except</label>
-                	<textarea name="except" id="except-field" class="form-control" rows="3">{{ old('except', $topic->except ) }}</textarea>
+                	<label for="excerpt-field">Except</label>
+                	<textarea name="excerpt" id="except-field" class="form-control" rows="3">{{ old('excerpt', $topic->excerpt ) }}</textarea>
                 </div> 
                 <div class="form-group">
                 	<label for="slug-field">Slug</label>

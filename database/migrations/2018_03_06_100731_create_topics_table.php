@@ -17,7 +17,7 @@ class CreateTopicsTable extends Migration
             $table->integer('view_count')->unsigned()->default(0);
             $table->integer('last_reply_user_id')->unsigned()->default(0);
             $table->integer('order')->default(0);
-            $table->text('except')->comment('文章摘要');
+            $table->text('excerpt')->comment('文章摘要');
             $table->string('slug')->nullable();
             $table->timestamps();
         });
