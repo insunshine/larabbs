@@ -15,7 +15,7 @@ class CategoriesController extends Controller
                         ->where('category_id', $category->id)
                         ->paginate(20);
 
-        //传参变量话题和分类模板中
+        //传参变量,话题和分类模板中
         return view('topics.index', compact('topics', 'category'));
     }
 }
