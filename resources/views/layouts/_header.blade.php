@@ -34,7 +34,9 @@
                 @else
                     <li>
                         <a href="{{ route('topics.create') }}">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true">
+
+                            </span>
                         </a>
                     </li>
                     <li class="dropdown">

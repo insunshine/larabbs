@@ -42,4 +42,10 @@ class Topic extends Model
     {
         return $query->orderBy('updated_at', 'desc');
     }
+
+    //参数params允许附加URL参数的绑定
+    public function link($params = [])
+    {
+        return route('topics.show', array_merge([$this->id, $this->slug], $params));
+    }
 }
