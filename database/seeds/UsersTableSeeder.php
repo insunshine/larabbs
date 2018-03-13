@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -29,7 +30,7 @@ class UsersTableSeeder extends Seeder
         ];
 
         //生成数据集合
-        $users = factory(\App\Models\User::class)
+        $users = factory(User::class)
                             ->times(10)
                             ->make()
                             ->each(function ($user, $index)
@@ -38,11 +39,17 @@ class UsersTableSeeder extends Seeder
                                 $user->avatar = $faker->randomElement($avatars);
                             }
         );
-        \App\Models\User::insert($users->makeVisible(['password', 'remember_token'])->toArray());
+        User::insert($users->makeVisible(['password', 'remember_token'])->toArray());
 
-        $user = \App\Models\User::find(1);
+        $user = User::find(1);
         $user->name = 'FreeLoop';
         $user->email = '292228108@qq.com';
         $user->save();
+
+        //初始化用户角色，1号指派为站长
+        $user->assignRole('Founder');
+
+        $user = User::find(2);
+        $user->assignRole('Maintainer');
     }
 }
