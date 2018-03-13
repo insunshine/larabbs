@@ -63,4 +63,23 @@ class User extends Authenticatable
         $this->save();
         $this->unreadNotifications->markAsRead();
     }
+
+    //管理后台修改密码，未加密的
+    public function setPasswordAttribute($value)
+    {
+        if (strlen($value) != 60) {
+            $value = bcrypt($value);
+        }
+        $this->attributes['password'] = $value;
+    }
+
+    //管理后台上传，路径不全的
+    public function setAvatarAttribute($path)
+    {
+        if ( ! starts_with($path, 'http')) {
+            $path = config('app.url') . "/uploads/images/avatar/$path";
+        }
+
+        $this->attributes['avatar'] = $path;
+    }
 }
