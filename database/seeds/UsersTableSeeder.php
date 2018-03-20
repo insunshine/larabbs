@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
         //初始化用户角色，1号指派为站长
         $user->assignRole('Founder');
 
-        $user = User::find(2);
+        $user = User::find(9);
         $user->assignRole('Maintainer');
     }
 }
